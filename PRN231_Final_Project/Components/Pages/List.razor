@@ -1,0 +1,60 @@
+﻿@page "/List"
+
+<style>
+    .question-header {
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .question-body {
+        padding: 20px;
+    }
+
+    .answer-feedback {
+        color: #dc3545;
+    }
+</style>
+
+<div class="container mt-4">
+    @foreach (var item in QuestionList)
+    {
+        <div class="card m-2 rounded-3">
+            <div class="question-header @(item.IsRequired == true ? "text-danger" : string.Empty)">
+                <h5>Question 1 </h5>
+            </div>
+            <div class="question-body">
+                <h4><strong>@item.MainContent</strong></h4>
+                @if (!string.IsNullOrEmpty(item.Image))
+                {
+                    <img src="@item.Image" class="img-fluid my-3" />
+                }
+                @foreach (var subItem in item.SubQuestions)
+                {
+                    <div class="form-check m-1 p-2 @(subItem.IsCorrect == true ? "alert alert-success" : string.Empty)">
+                        <label class="form-check-label" for="option1">
+                            @subItem.SubContent
+                        </label>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+
+</div>
+
+@code {
+    List<QuestionResponse> QuestionList = new List<QuestionResponse>();
+
+    public int TypeId { get; set; } = 1;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var resp = await this.QuestionService.GetAllQuestion(TypeId);
+
+        if (resp.IsSuccessful)
+        {
+            QuestionList = resp.Items;
+        }
+    }
+}

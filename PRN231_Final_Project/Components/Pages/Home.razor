@@ -1,0 +1,127 @@
+﻿@page "/Home"
+
+<style>
+    .mud-table-cell {
+        border: none !important;
+        text-align: center;
+    }
+
+    .mud-table-head .mud-table-row .mud-table-cell {
+        border-bottom: 1px solid grey !important;
+        font-size: 1.2rem;
+    }
+
+    .mud-table {
+        box-shadow: none !important;
+    }
+
+    .mud-table-root {
+        border-collapse: separate !important; /* Don't collapse */
+        border-spacing: 0 !important;
+    }
+
+    .mud-table-head .mud-table-row {
+        box-shadow: 0 5px 10px #e1e5ee;
+        position: sticky;
+        top: 0;
+        background-color: white;
+        z-index: 99;
+    }
+</style>
+
+<div class="container">
+    <div class="mb-4 mt-4">
+        <h1>Dashboard Page</h1>
+    </div>
+    <div class="row d-flex justify-content-between mb-4">
+        <div class="col-8">
+            <div class="custom-box h-auto">
+                <h4 class="text-center mb-5">Highest Score</h4>
+                <div class="d-flex justify-content-evenly">
+                    <div class="d-flex flex-column align-items-center">
+                        <label class="text-center">Type A1</label>
+                        <h1 class="text-center text-bold text-success">25/25</h1>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <label class="text-center">Type B1</label>
+                        <h1 class="text-center text-bold text-success">30/30</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="custom-box h-auto">
+                <h4 class="text-center mb-4">Start a Test</h4>
+                <p class="text-center m-4">Click button below to start your quizz test</p>
+                <div class="d-flex justify-content-center">
+                    <MudButton Color="Color.Primary" Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Quiz" Size="Size.Small" FullWidth="true" Href="/quiz">Go To Test</MudButton>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5">
+        <div class="custom-box ">
+            <h4>Test History</h4>
+            <div>
+                <MudTable Items="@list" FixedHeader="true" Height="400px" Hover="true">
+                    <HeaderContent>
+                        <MudTh>Id</MudTh>
+                        <MudTh>Type</MudTh>
+                        <MudTh>Correct</MudTh>
+                        <MudTh>Date</MudTh>
+                        <MudTh>Time</MudTh>
+                        <MudTh></MudTh>
+                    </HeaderContent>
+                    <RowTemplate>
+                        <MudTd>1</MudTd>
+                        <MudTd>A1</MudTd>
+                        <MudTd Class="text-success fw-bold">8/20 (Pass)</MudTd>
+                        <MudTd>24/06/2024</MudTd>
+                        <MudTd>18:30</MudTd>
+                        <MudTd>
+                                <MudIconButton Icon="@Icons.Material.Filled.ListAlt" Variant="Variant.Filled" Color="Color.Primary"></MudIconButton>
+                        </MudTd>
+                    </RowTemplate>
+                    <PagerContent>
+                        @if (list.Count > 10)
+                        {
+                            <MudTablePager />
+                        }
+                    </PagerContent>
+                </MudTable>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    public class Test
+    {
+        public int Id { get; set; }
+        public string Type { get; set; }
+        public string Correct { get; set; }
+        public string Date { get; set; }
+        public string Time { get; set; }
+    }
+
+    public List<Test> list = new List<Test>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        list = new List<Test>
+        {
+            new Test { Id = 1, Type = "Type1", Correct = "Yes", Date = "2024-06-25", Time = "08:00" },
+            new Test { Id = 2, Type = "Type2", Correct = "No", Date = "2024-06-26", Time = "09:00" },
+            new Test { Id = 2, Type = "Type2", Correct = "No", Date = "2024-06-26", Time = "09:00" },
+            new Test { Id = 2, Type = "Type2", Correct = "No", Date = "2024-06-26", Time = "09:00" },
+            new Test { Id = 2, Type = "Type2", Correct = "No", Date = "2024-06-26", Time = "09:00" },
+            new Test { Id = 3, Type = "Type3", Correct = "Yes", Date = "2024-06-27", Time = "10:00" },
+            new Test { Id = 3, Type = "Type3", Correct = "Yes", Date = "2024-06-27", Time = "10:00" },
+            new Test { Id = 3, Type = "Type3", Correct = "Yes", Date = "2024-06-27", Time = "10:00" },
+            new Test { Id = 3, Type = "Type3", Correct = "Yes", Date = "2024-06-27", Time = "10:00" },
+            new Test { Id = 3, Type = "Type3", Correct = "Yes", Date = "2024-06-27", Time = "10:00" },
+            new Test { Id = 3, Type = "Type3", Correct = "Yes", Date = "2024-06-27", Time = "10:00" },
+            new Test { Id = 4, Type = "Type4", Correct = "No", Date = "2024-06-28", Time = "11:00" }
+        };
+    }
+}

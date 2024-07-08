@@ -1,0 +1,37 @@
+﻿@page "/quiz"
+
+<div class="container">
+    <div class="mb-4 mt-4">
+        <h1>Test Selection </h1>
+    </div>
+    <div class="row d-flex justify-content-between mb-4">
+        <div class="col-6">
+            <div class="custom-box h-auto">
+                <h2 class="text-center mb-4">Start License A1 Test</h2>
+                <p class="text-start m-4">Total: 25 question</p>
+                <p class="text-start m-4">Number of question to pass: 21/25</p>
+                <p class="text-start m-4">Time: 19 minutes</p>
+                <p class="text-start m-4">Lastest result: <span class="text-danger fw-bold">20/25</span></p>
+                <div class="d-flex justify-content-center">
+                    <MudButton Color="Color.Primary" Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Quiz" Size="Size.Medium" FullWidth="true">Start A1 Test</MudButton>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="custom-box h-auto">
+                <h2 class="text-center mb-4">Start License B1 Test</h2>
+                <p class="text-start m-4">Total: 30 question</p>
+                <p class="text-start m-4">Number of question to pass: 27/30</p>
+                <p class="text-start m-4">Time: 20 minutes</p>
+                <p class="text-start m-4">Lastest result: <span class="text-success fw-bold">30/30</span></p>
+                <div class="d-flex justify-content-center">
+                    <MudButton Color="Color.Primary" Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Quiz" Size="Size.Medium" FullWidth="true">Start B1 Test</MudButton>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+}

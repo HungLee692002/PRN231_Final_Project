@@ -1,0 +1,29 @@
+﻿@using System.Net.Http
+@using System.Net.Http.Json
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using static Microsoft.AspNetCore.Components.Web.RenderMode
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.JSInterop
+@using PRN231_Final_Project
+@using PRN231_Final_Project.Components
+@using PRN231_Final_Project.IServices
+@using PRN231_Library.Common
+@using PRN231_Library.Request
+@using PRN231_Library.Models
+@using PRN231_Library.Response
+@using MudBlazor
+@using Microsoft.AspNetCore.Components.Authorization
+@using PRN231_Final_Project.Authentication
+
+@inject CustomAuthenticationStateProvider CustomAuthStateProvider
+@inject NavigationManager NavManager
+@inject IJSRuntime js
+@inject AuthenticationStateProvider AuthStateProvider
+@inject ISnackbar Snackbar
+
+@inject IAccountService AccountService
+@inject IQuizReportService QuizReportService
+@inject IQuestionService QuestionService
+

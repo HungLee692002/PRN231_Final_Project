@@ -1,0 +1,177 @@
+﻿@page "/test"
+
+<style>
+    .question-number {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+        .question-number button {
+            width: 50px;
+            height: 50px;
+        }
+
+    .question-content {
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #f8f9fa;
+    }
+
+    .timer {
+        text-align: right;
+        font-size: 2em;
+        color: red;
+    }
+
+    .question-options input {
+        margin-right: 10px;
+    }
+
+    .navigation-buttons {
+        margin-top: 20px;
+    }
+
+</style>
+
+<div class="container mt-4">
+    <div class="row custom-box">
+        <div class="col-md-4">
+            <div class="question-number mb-4">
+                @if (!isNull)
+                {
+                    @for (int i = 0; i < QuestionList.Count; i++)
+                    {
+                        var index = i;
+                        <MudButton Variant="Variant.Filled" Color="@(QuestionList[index].SelectedSubId != null ? Color.Success : Color.Default)" OnClick="@(() => ChangeQuestion(index))">@(index + 1)</MudButton>
+                    }
+                }
+            </div>
+            <div class="text-right mt-3">
+                <MudButton Variant="Variant.Filled" Color="Color.Success" Size="Size.Medium">Submit</MudButton>
+            </div>
+        </div>
+        <div class="col-md-8">
+            @if (!isNull)
+            {
+                <div class="question-content">
+                    <div class="timer">@FormattedTime</div>
+                    <h5>Câu hỏi @(CurrentQuestionIndex + 1):</h5>
+                    <p>@QuestionList[CurrentQuestionIndex ?? 0].MainContent</p>
+                    @if (!string.IsNullOrEmpty(QuestionList[CurrentQuestionIndex ?? 0]?.Image))
+                    {
+                        <img src="@QuestionList[CurrentQuestionIndex ?? 0]?.Image" class="img-fluid my-3" />
+                    }
+                    <div class="question-options">
+                        @foreach (var item in QuestionList[CurrentQuestionIndex ?? 0].SubQuestions)
+                        {
+                            <div class="form-check d-flex align-items-start">
+                                <input type="radio" id="@($"radio_{item.SubsId}")"
+                                       name="question"
+                                       class="form-check-input col-1"
+                                       value="@item.SubsId"
+                                       checked="@(item.SubsId == QuestionList[CurrentQuestionIndex ?? 0].SelectedSubId)"
+                                       @onchange="@(e => OnSelectedSubIdChanged(item.SubsId))" />
+                                <label class="form-check-label col-11" for="@($"radio_{item.SubsId}")">
+                                    @item.SubContent
+                                </label>
+                            </div>
+                        }
+                    </div>
+                    <div class="navigation-buttons">
+                        <MudButton Variant="Variant.Filled" Class="me-4" Size="Size.Medium" OnClick="@(() => ChangeQuestion(false))">Back</MudButton>
+                        <MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Medium" OnClick="@(() => ChangeQuestion(true))">Next</MudButton>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@code {
+    private string FormattedTime => TimeSpan.FromSeconds(counter).ToString(@"mm\:ss");
+    private static System.Timers.Timer aTimer;
+    private int counter = 1800;
+
+    public int? CurrentQuestionIndex { get; set; } = 0;
+
+    public bool isNull { get; set; } = true;
+
+    List<TestResponse> QuestionList = new List<TestResponse>();
+
+
+    public int TypeId { get; set; } = 1;
+
+    protected async override Task OnInitializedAsync()
+    {
+        StartTimer();
+
+        var resp = await this.QuestionService.GetTestQuestion(TypeId);
+
+        if (resp.IsSuccessful)
+        {
+            QuestionList = resp.Items;
+            CurrentQuestionIndex = 0;
+            isNull = false;
+        }
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            StateHasChanged();
+        }
+    }
+
+    public void StartTimer()
+    {
+        aTimer = new System.Timers.Timer(1000);
+        aTimer.Elapsed += CountDownTimer;
+        aTimer.Enabled = true;
+    }
+
+    public void CountDownTimer(Object source, System.Timers.ElapsedEventArgs e)
+    {
+        if (counter > 0)
+        {
+            counter -= 1;
+        }
+        else
+        {
+            aTimer.Enabled = false;
+        }
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void ChangeQuestion(int index)
+    {
+        CurrentQuestionIndex = index;
+    }
+
+    public void ChangeQuestion(bool isNext)
+    {
+        if (isNext)
+        {
+            CurrentQuestionIndex += 1;
+            if (CurrentQuestionIndex > 24)
+            {
+                CurrentQuestionIndex = 0;
+            }
+        }
+        else
+        {
+            CurrentQuestionIndex -= 1;
+            if (CurrentQuestionIndex < 0)
+            {
+                CurrentQuestionIndex = 24;
+            }
+        }
+    }
+
+    private void OnSelectedSubIdChanged(int? subsId)
+    {
+        QuestionList[CurrentQuestionIndex ?? 0].SelectedSubId = subsId;
+    }
+}
