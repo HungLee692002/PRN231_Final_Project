@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PRN231_Final\\PRN231_API\\PRN231_API.csproj": {}
+    "D:\\PRN231\\PRN231_Final_Project\\PRN231_API\\PRN231_API.csproj": {}
   },
   "projects": {
-    "D:\\PRN231_Final\\PRN231_API\\PRN231_API.csproj": {
+    "D:\\PRN231\\PRN231_Final_Project\\PRN231_API\\PRN231_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PRN231_Final\\PRN231_API\\PRN231_API.csproj",
+        "projectUniqueName": "D:\\PRN231\\PRN231_Final_Project\\PRN231_API\\PRN231_API.csproj",
         "projectName": "PRN231_API",
-        "projectPath": "D:\\PRN231_Final\\PRN231_API\\PRN231_API.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\PRN231_Final\\PRN231_API\\obj\\",
+        "projectPath": "D:\\PRN231\\PRN231_Final_Project\\PRN231_API\\PRN231_API.csproj",
+        "packagesPath": "C:\\Users\\Admins\\.nuget\\packages\\",
+        "outputPath": "D:\\PRN231\\PRN231_Final_Project\\PRN231_API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admins\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,11 +33,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\PRN231_Final\\PRN231_Final_Project\\PRN231_Final_Project.csproj": {
-                "projectPath": "D:\\PRN231_Final\\PRN231_Final_Project\\PRN231_Final_Project.csproj"
+              "D:\\PRN231\\PRN231_Final_Project\\PRN231_Final_Project\\PRN231_Final_Project.csproj": {
+                "projectPath": "D:\\PRN231\\PRN231_Final_Project\\PRN231_Final_Project\\PRN231_Final_Project.csproj"
               },
-              "D:\\PRN231_Final\\PRN231_Library\\PRN231_Library.csproj": {
-                "projectPath": "D:\\PRN231_Final\\PRN231_Library\\PRN231_Library.csproj"
+              "D:\\PRN231\\PRN231_Final_Project\\PRN231_Library\\PRN231_Library.csproj": {
+                "projectPath": "D:\\PRN231\\PRN231_Final_Project\\PRN231_Library\\PRN231_Library.csproj"
               }
             }
           }
@@ -94,24 +94,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\PRN231_Final\\PRN231_Final_Project\\PRN231_Final_Project.csproj": {
+    "D:\\PRN231\\PRN231_Final_Project\\PRN231_Final_Project\\PRN231_Final_Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PRN231_Final\\PRN231_Final_Project\\PRN231_Final_Project.csproj",
+        "projectUniqueName": "D:\\PRN231\\PRN231_Final_Project\\PRN231_Final_Project\\PRN231_Final_Project.csproj",
         "projectName": "PRN231_Final_Project",
-        "projectPath": "D:\\PRN231_Final\\PRN231_Final_Project\\PRN231_Final_Project.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\PRN231_Final\\PRN231_Final_Project\\obj\\",
+        "projectPath": "D:\\PRN231\\PRN231_Final_Project\\PRN231_Final_Project\\PRN231_Final_Project.csproj",
+        "packagesPath": "C:\\Users\\Admins\\.nuget\\packages\\",
+        "outputPath": "D:\\PRN231\\PRN231_Final_Project\\PRN231_Final_Project\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admins\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -127,8 +127,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\PRN231_Final\\PRN231_Library\\PRN231_Library.csproj": {
-                "projectPath": "D:\\PRN231_Final\\PRN231_Library\\PRN231_Library.csproj"
+              "D:\\PRN231\\PRN231_Final_Project\\PRN231_Library\\PRN231_Library.csproj": {
+                "projectPath": "D:\\PRN231\\PRN231_Final_Project\\PRN231_Library\\PRN231_Library.csproj"
               }
             }
           }
@@ -175,24 +175,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\PRN231_Final\\PRN231_Library\\PRN231_Library.csproj": {
+    "D:\\PRN231\\PRN231_Final_Project\\PRN231_Library\\PRN231_Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PRN231_Final\\PRN231_Library\\PRN231_Library.csproj",
+        "projectUniqueName": "D:\\PRN231\\PRN231_Final_Project\\PRN231_Library\\PRN231_Library.csproj",
         "projectName": "PRN231_Library",
-        "projectPath": "D:\\PRN231_Final\\PRN231_Library\\PRN231_Library.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\PRN231_Final\\PRN231_Library\\obj\\",
+        "projectPath": "D:\\PRN231\\PRN231_Final_Project\\PRN231_Library\\PRN231_Library.csproj",
+        "packagesPath": "C:\\Users\\Admins\\.nuget\\packages\\",
+        "outputPath": "D:\\PRN231\\PRN231_Final_Project\\PRN231_Library\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admins\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -255,7 +255,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
